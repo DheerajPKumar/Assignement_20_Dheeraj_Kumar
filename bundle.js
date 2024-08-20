@@ -58,11 +58,11 @@ fileListArr.forEach((file) => {
 if (minify) {
   const minified = UglifyJS.minify(bundle);
   if (minified.error) {
-    console.error("Error ", minified.error);
+    console.log("Error");
     return;
   }
   bundle = minified.code;
 }
 
 fs.writeFileSync(outputFile, bundle);
-console.log(`Bundled file written to ${outputFile}`);
+console.log(`Bundled all files into ${outputFile}`);
